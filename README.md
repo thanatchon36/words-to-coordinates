@@ -7,6 +7,8 @@
 <a href="paper/paper.pdf"><img src="https://img.shields.io/badge/paper-PDF-3ddc97?style=flat-square&labelColor=0b1020" alt="Paper PDF"></a>
 <a href="#data-sources"><img src="https://img.shields.io/badge/data-real%20assets%20%C2%B7%20synthetic%20hazards-b0560f?style=flat-square&labelColor=0b1020" alt="Data: real asset locations, synthetic hazards"></a>
 <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-c8f7dc?style=flat-square&labelColor=0b1020" alt="License MIT"></a>
+<a href="https://zenodo.org/badge/latestdoi/1452379898"><img src="https://zenodo.org/badge/1452379898.svg" alt="DOI"></a>
+<a href="https://huggingface.co/datasets/thanatchon36/words-to-coordinates"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20dataset-words--to--coordinates-3ddc97?style=flat-square&labelColor=0b1020" alt="Hugging Face dataset"></a>
 </p>
 
 <p align="center">
@@ -14,6 +16,7 @@
 📄 <b><a href="paper/paper.pdf">Download the PDF</a></b> ·
 📊 <b><a href="results/results.json">Results</a></b> ·
 🗂️ <b><a href="#data-sources">Data sources</a></b> ·
+🤗 <b><a href="https://huggingface.co/datasets/thanatchon36/words-to-coordinates">Dataset</a></b> ·
 📝 <b><a href="CHANGELOG.md">Changelog</a></b>
 </p>
 
@@ -52,6 +55,7 @@ the experiments. Without `uv`: `pip install -r requirements.txt pytest`, then `m
 | `banner` | README banner → `docs/assets/banner.png` |
 | `table` | `paper/tab_e3.tex` from `results/results.json` |
 | `paper` | Compile `paper/paper.pdf` (pdflatex + bibtex) |
+| `hf` | Hugging Face dataset → `build/hf/` |
 | `web` | Web reader → `docs/paper/index.html` (pandoc), served at <https://thanatchon36.github.io/words-to-coordinates/paper/> |
 | `test` | Unit tests for the simulation library and the web reader build |
 
@@ -108,6 +112,8 @@ behaves when the error processes are known and sets out the evaluation protocol 
 
 - Results: [`results/results.json`](results/results.json) · Table: [`paper/tab_e3.tex`](paper/tab_e3.tex) ·
   Figures: [`paper/figs/`](paper/figs/) (PDF) and [`assets/`](assets/) (PNG)
+- Dataset on Hugging Face: [`thanatchon36/words-to-coordinates`](https://huggingface.co/datasets/thanatchon36/words-to-coordinates), with the asset table (owner names
+  dropped), per-replicate results of E1–E3 and per-firm Monte Carlo probabilities of E3 (`make hf` builds it)
 - Every experimental unit uses its own random-number stream derived from a fixed master seed
   ([`code/config.py`](code/config.py)), so results do not depend on the order or partitioning of computation.
 
@@ -127,6 +133,7 @@ paper/                      paper.tex, paper.pdf, paper.bbl, references.bib, arx
                             fig_architecture.tex (TikZ), tab_e3.tex, figs/, reader.html (web template)
 results/                    parts/ (cached per-unit .npz), results.json, results_extra.json
 assets/                     PNG previews of the figures
+hf/                         Hugging Face dataset card and licence
 docs/                       GitHub Pages: paper/ (web reader), assets/banner.png
 data/                       downloaded by get_data.sh (git-ignored)
 tests/                      simulation library, web reader build
@@ -151,7 +158,7 @@ materiality, so quadrant labels are prompts for scrutiny rather than findings. S
 
 ## Citation
 
-See [`CITATION.cff`](CITATION.cff), or:
+See [`CITATION.cff`](CITATION.cff); each release is archived on Zenodo (DOI badge above). Or:
 
 ```bibtex
 @misc{chongmankhong2026words,
@@ -160,6 +167,7 @@ See [`CITATION.cff`](CITATION.cff), or:
             the Gap Between Disclosed and Physical Climate Risk},
   year   = {2026},
   note   = {Preprint},
+  doi    = {10.5281/zenodo.24102121},
   url    = {https://thanatchon36.github.io/words-to-coordinates/paper/}
 }
 ```

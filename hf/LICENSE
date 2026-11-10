@@ -1,0 +1,20 @@
+words-to-coordinates dataset — licence terms
+Copyright (c) 2026 Thanatchon Chongmankhong
+
+1. Everything in this dataset
+
+   Creative Commons Attribution 4.0 International (CC BY 4.0)
+   https://creativecommons.org/licenses/by/4.0/
+
+   You may share and adapt this material for any purpose, provided you give appropriate credit
+   (cite the DOI 10.5281/zenodo.24102121), link to the licence and indicate if changes were made.
+
+2. Third-party sources
+
+   assets/assets.csv is derived from the Global Power Plant Database v1.3.0 by the World Resources
+   Institute (Byers et al., 2018), released under CC BY 4.0
+   (https://github.com/wri/global-power-plant-database). Any use must also credit the World Resources
+   Institute. Plant and owner names have been removed.
+
+   assets/country_points.csv uses label points from Natural Earth (https://www.naturalearthdata.com),
+   which is in the public domain.

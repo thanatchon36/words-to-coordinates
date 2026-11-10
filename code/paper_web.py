@@ -20,6 +20,8 @@ ROOT = Path(__file__).resolve().parents[1]
 PAPER, ASSETS, OUT = ROOT / "paper", ROOT / "assets", ROOT / "docs" / "paper"
 REPO_URL = "https://github.com/thanatchon36/words-to-coordinates"
 PAPER_URL = "https://thanatchon36.github.io/words-to-coordinates/paper/"
+DATA_URL = "https://huggingface.co/datasets/thanatchon36/words-to-coordinates"
+CONCEPT_DOI = "10.5281/zenodo.24102121"
 REFS_MARKER = "W2CREFERENCESMARKER"
 
 THEOREMS = ("proposition", "corollary", "definition", "remark")
@@ -268,12 +270,14 @@ def build() -> Path:
            f"  title  = {{{title}}},\n"
            "  year   = {2026},\n"
            "  note   = {Preprint},\n"
+           f"  doi    = {{{CONCEPT_DOI}}},\n"
            f"  url    = {{{PAPER_URL}}}\n"
            "}")
     fill = {
         "<!--ACTIONS-->": ('<li><a href="paper.pdf">Download PDF</a></li>'
                            f'<li><a href="{REPO_URL}">Code and replication</a></li>'
-                           f'<li><a href="{REPO_URL}/releases">Releases</a></li>'),
+                           f'<li><a href="{DATA_URL}">Data (Hugging Face)</a></li>'
+                           f'<li><a href="https://doi.org/{CONCEPT_DOI}">Zenodo archive</a></li>'),
         "<!--RESULTS-NOTE-->": ("Headline numbers from the simulation study, read from results/results.json. Asset "
                                 "locations are real (Global Power Plant Database v1.3.0); hazard fields, disclosures and "
                                 "extraction errors are synthetic. Green: theory confirmed; amber: measured sensitivity; "

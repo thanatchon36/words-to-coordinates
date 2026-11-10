@@ -4,6 +4,13 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project uses
 [Semantic Versioning](https://semver.org/).
 
+## [Unreleased]
+
+### Added
+- Zenodo archive, concept DOI [10.5281/zenodo.24102121](https://doi.org/10.5281/zenodo.24102121) (v0.1.0: 10.5281/zenodo.24102122), with DOI badge and
+  `doi` in `CITATION.cff`, the README citation and the web reader.
+- Links to the Hugging Face dataset in the README and the web reader.
+
 ## [0.1.0] - 2026-11-10
 
 ### Added
