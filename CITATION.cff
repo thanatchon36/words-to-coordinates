@@ -1,13 +1,36 @@
 cff-version: 1.2.0
-message: "If you use this work, please cite it as below."
-title: "Words to Coordinates: An Uncertainty-Aware NLP-Geospatial Framework for Measuring the Gap Between Disclosed and Physical Climate Risk"
+message: "Please cite the paper (preferred-citation); if you use the W2C simulation code, also cite the software."
+title: "words-to-coordinates: simulation study and preprint for an uncertainty-aware NLP-geospatial framework for climate risk disclosure"
+abstract: >-
+  Code, cached results and preprint for Words to Coordinates (W2C), a framework
+  that links what firms disclose about physical climate risk to what their
+  assets face. Includes a closed-form relation between geolocation error and
+  exposure fidelity, the Disclosure Gap Index with disclosure-exposure
+  quadrants, and a simulation study on the real locations of 11,107 power
+  plants with Monte Carlo propagation of extraction, geolocation and
+  hazard-model uncertainty.
+type: software
 authors:
   - family-names: Chongmankhong
     given-names: Thanatchon
-type: software
+version: 0.1.0
+date-released: 2026-11-10
+license: MIT
+repository-code: "https://github.com/thanatchon36/words-to-coordinates"
+url: "https://thanatchon36.github.io/words-to-coordinates/paper/"
 keywords:
   - climate risk disclosure
   - physical climate risk
   - natural language processing
   - geospatial analysis
   - uncertainty quantification
+  - sustainable finance
+preferred-citation:
+  type: generic
+  title: "Words to Coordinates: An Uncertainty-Aware NLP-Geospatial Framework for Measuring the Gap Between Disclosed and Physical Climate Risk"
+  authors:
+    - family-names: Chongmankhong
+      given-names: Thanatchon
+  year: 2026
+  url: "https://thanatchon36.github.io/words-to-coordinates/paper/"
+  notes: "Preprint; simulation results use real asset locations with synthetic hazards and disclosures."

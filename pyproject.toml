@@ -1,0 +1,33 @@
+[project]
+name = "words-to-coordinates"
+version = "0.1.0"
+description = "Uncertainty-aware NLP-geospatial framework for measuring the gap between disclosed and physical climate risk: simulation study and preprint"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Thanatchon Chongmankhong" }]
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "pandas>=2.0",
+    "matplotlib>=3.7",
+    "scikit-learn>=1.3",
+    "shapely>=2.0",
+    "pyproj>=3.6",
+    "h3>=4.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.urls]
+Repository = "https://github.com/thanatchon36/words-to-coordinates"
+Paper = "https://thanatchon36.github.io/words-to-coordinates/paper/"
+
+# The code in code/ is a set of scripts, not an installable package.
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["code"]

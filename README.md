@@ -1,24 +1,74 @@
-# Words to Coordinates (W2C)
+<p align="center"><a href="https://thanatchon36.github.io/words-to-coordinates/paper/"><img src="docs/assets/banner.png" alt="words-to-coordinates: installed power capacity per H3 cell, Global Power Plant Database v1.3.0" width="100%"></a></p>
 
-**An Uncertainty-Aware NLP–Geospatial Framework for Measuring the Gap Between Disclosed and Physical Climate Risk**
+<p align="center">
+<a href="https://github.com/thanatchon36/words-to-coordinates/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/thanatchon36/words-to-coordinates/ci.yml?style=flat-square&label=CI&labelColor=0b1020&color=3ddc97" alt="CI"></a>
+<a href="pyproject.toml"><img src="https://img.shields.io/badge/python-3.12-3ddc97?style=flat-square&labelColor=0b1020" alt="Python 3.12"></a>
+<a href="https://thanatchon36.github.io/words-to-coordinates/paper/"><img src="https://img.shields.io/badge/paper-read%20online-3ddc97?style=flat-square&labelColor=0b1020" alt="Paper: read online"></a>
+<a href="paper/paper.pdf"><img src="https://img.shields.io/badge/paper-PDF-3ddc97?style=flat-square&labelColor=0b1020" alt="Paper PDF"></a>
+<a href="#data-sources"><img src="https://img.shields.io/badge/data-real%20assets%20%C2%B7%20synthetic%20hazards-b0560f?style=flat-square&labelColor=0b1020" alt="Data: real asset locations, synthetic hazards"></a>
+<a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-c8f7dc?style=flat-square&labelColor=0b1020" alt="License MIT"></a>
+</p>
 
-Thanatchon Chongmankhong · Preprint, November 2026 · [Read the paper (PDF)](paper/paper.pdf)
+<p align="center">
+📖 <b><a href="https://thanatchon36.github.io/words-to-coordinates/paper/">Read the paper online</a></b> ·
+📄 <b><a href="paper/paper.pdf">Download the PDF</a></b> ·
+📊 <b><a href="results/results.json">Results</a></b> ·
+🗂️ <b><a href="#data-sources">Data sources</a></b> ·
+📝 <b><a href="CHANGELOG.md">Changelog</a></b>
+</p>
+
+**Words to Coordinates (W2C): an uncertainty-aware NLP–geospatial framework for measuring the gap between
+disclosed and physical climate risk.** W2C links *what firms disclose* to *what their assets face*: a text lane
+extracts taxonomy-aligned climate disclosures (IFRS S2, with crosswalks to ESRS E1 and GRI 305) with page-level
+provenance, a geo lane resolves assets to coordinates with explicit precision classes and overlays them with
+hazard-model ensembles, and the **Disclosure Gap Index (DGI)** places every firm in one of four quadrants —
+*aware*, *silent risk*, *cheap talk* and *benign* — with a calibrated probability.
 
 ![W2C architecture](assets/fig_architecture.png)
 
-## Overview
+> **Simulation data notice.** Only the asset locations (Global Power Plant Database v1.3.0) are real. Hazard
+> fields, disclosure levels and extraction errors in the simulation study are synthetic. Owner names are used only to
+> group plants into pseudo-firms, and no result refers to any real company.
 
-Corporate climate disclosure is being standardised rapidly, with IFRS S2 emerging as a global baseline, yet the
-information that matters most for physical climate risk — where a firm's assets are and which hazards they face —
-remains embedded in unstructured, multilingual reports. W2C links *what firms disclose* to *what their assets face*:
+## Install and quickstart
 
-- **Text lane** — extracts taxonomy-aligned climate disclosures (IFRS S2, with crosswalks to ESRS E1 and GRI 305)
-  with page-level provenance, using XBRL-tagged filings as distant supervision for under-served, non-English markets.
-- **Geo lane** — resolves assets to coordinates with explicit precision classes and overlays them with
-  scenario-based hazard projections from a multi-model ensemble.
-- **Disclosure Gap Index (DGI)** — compares modelled exposure with disclosure intensity within a peer group and places
-  firms in four quadrants: *aware*, *silent risk*, *cheap talk* and *benign*. Extraction, geolocation and
-  hazard-model uncertainty are propagated end to end, so every classification carries a calibrated probability.
+```bash
+make setup         # uv venv + dependencies (Python 3.12)
+make test          # 15 unit tests, no downloaded data needed
+make data          # download GPPD v1.3.0 and Natural Earth boundaries into data/
+make experiments   # optional: rerun E1–E3 (about 6 minutes)
+make all           # figures -> table -> paper -> web reader
+```
+
+Cached results are included in `results/`, so figures, the results table and the paper rebuild without rerunning
+the experiments. Without `uv`: `pip install -r requirements.txt pytest`, then `make <target> PY=python3`.
+
+| Target | Purpose |
+|---|---|
+| `setup` | Create `.venv` with uv and install the dependencies from `pyproject.toml` |
+| `data` | Download GPPD v1.3.0 and Natural Earth boundaries into `data/` (git-ignored) |
+| `experiments` | Run E1–E3 with `code/run_parts.py` (resumable, seeded per unit) and merge into `results/results.json` |
+| `figures` | `paper/figs/*.pdf` and the PNG previews in `assets/` |
+| `banner` | README banner → `docs/assets/banner.png` |
+| `table` | `paper/tab_e3.tex` from `results/results.json` |
+| `paper` | Compile `paper/paper.pdf` (pdflatex + bibtex) |
+| `web` | Web reader → `docs/paper/index.html` (pandoc), served at <https://thanatchon36.github.io/words-to-coordinates/paper/> |
+| `test` | Unit tests for the simulation library and the web reader build |
+
+## What the framework does
+
+1. **Ingestion and document AI** — filings and voluntary reports from regulatory repositories, parsed once with
+   layout-aware conversion; every element is keyed by (document hash, page, bounding box).
+2. **Taxonomy-aligned extraction** — hybrid retrieval (BM25, multilingual dense embeddings, visual page retrieval)
+   into a typed schema anchored on IFRS S2, with XBRL-tagged filings as distant supervision for non-English markets.
+3. **Verification and calibration** — deterministic checks plus a calibrated distribution P(D | D̂) for the ordinal
+   disclosure level, with split-conformal prediction sets.
+4. **Entity resolution and geocoding** — LEI-based parent–subsidiary resolution, matching to open asset registries,
+   and a precision class with an empirical error scale σ for every location.
+5. **Hazard overlay** — hazard layers per scenario and horizon, with ensemble members kept separate and H3 cells as
+   the common spatial index.
+6. **Uncertainty propagation** — Monte Carlo draws of hazard member, asset locations and disclosure levels give a
+   probability for each quadrant and an interval for the DGI.
 
 ## Key results (simulation study)
 
@@ -36,10 +86,6 @@ hazard exposure for a hazard with spatial correlation length ℓ: **Corr = ℓ²
 | Full uncertainty propagation vs. extraction-only | expected calibration error 0.075 → 0.033 |
 | Flagging silent-risk firms only when P(silent) ≥ 0.8 | precision 0.84 (vs. 0.68 for a point estimate) |
 
-> **Note.** Hazard fields, disclosure levels and extraction errors in the simulation are synthetic; only the asset
-> locations (Global Power Plant Database v1.3.0) are real. Owner names are used only to group plants into pseudo-firms,
-> and no result refers to any real company.
-
 <p align="center">
   <img src="assets/fig_thailand.png" width="88%" alt="The same synthetic hazard pattern at three correlation lengths over Thailand"><br>
   <em>Why geolocation precision depends on the hazard: the same synthetic pattern at ℓ = 25, 100 and 500 km over
@@ -51,68 +97,40 @@ hazard exposure for a hazard with spatial correlation length ℓ: **Corr = ℓ²
   <em>All combinations of ℓ and σ collapse onto the theoretical curve in σ/ℓ.</em>
 </p>
 
-## Repository structure
+## Research: *Words to Coordinates: An Uncertainty-Aware NLP–Geospatial Framework for Measuring the Gap Between Disclosed and Physical Climate Risk*
+
+The preprint by Thanatchon Chongmankhong (November 2026) is in [`paper/`](paper/): a PDF in
+[`paper/paper.pdf`](paper/paper.pdf) and its LaTeX source in [`paper/paper.tex`](paper/paper.tex) (arXiv style,
+[`paper/arxiv.sty`](paper/arxiv.sty); `paper/paper.bbl` is kept for arXiv). It is also published as a web page at
+<https://thanatchon36.github.io/words-to-coordinates/paper/>, rendered from the same source by `make web`. The paper
+is a framework and methods paper: it does not report disclosure gaps for real firms, but establishes how the DGI
+behaves when the error processes are known and sets out the evaluation protocol for the empirical programme.
+
+- Results: [`results/results.json`](results/results.json) · Table: [`paper/tab_e3.tex`](paper/tab_e3.tex) ·
+  Figures: [`paper/figs/`](paper/figs/) (PDF) and [`assets/`](assets/) (PNG)
+- Every experimental unit uses its own random-number stream derived from a fixed master seed
+  ([`code/config.py`](code/config.py)), so results do not depend on the order or partitioning of computation.
+
+## Repository layout
 
 ```
-words-to-coordinates/
-├── paper/
-│   ├── paper.pdf               # compiled preprint
-│   ├── paper.tex               # LaTeX source (arXiv style)
-│   ├── paper.bbl               # compiled bibliography (needed for arXiv)
-│   ├── references.bib
-│   ├── arxiv.sty               # style file from kourgeorge/arxiv-style (MIT)
-│   ├── fig_architecture.tex    # TikZ architecture figure
-│   ├── tab_e3.tex              # results table generated by code/make_table.py
-│   └── figs/                   # vector figures used in the paper
-├── code/
-│   ├── config.py               # experiment parameters and seed
-│   ├── w2clib.py               # random fields, perturbation, exposure, disclosure, quadrants
-│   ├── run_parts.py            # experiments E1–E3 (resumable, seeded per unit)
-│   ├── combine.py              # merges partial results into results/results.json
-│   ├── make_table.py           # writes paper/tab_e3.tex
-│   ├── figstyle.py             # shared figure style
-│   └── fig_*.py                # figure scripts
-├── results/
-│   ├── parts/                  # cached per-unit results (.npz)
-│   ├── results.json
-│   └── results_extra.json
-├── assets/                     # PNG previews
-├── data/                       # downloaded by get_data.sh (git-ignored)
-├── get_data.sh
-├── Makefile
-├── requirements.txt
-└── CITATION.cff
+code/
+  config.py                 experiment parameters and seed
+  w2clib.py                 random fields, perturbation, exposure, disclosure, quadrants
+  run_parts.py              experiments E1–E3 (resumable, seeded per unit)
+  combine.py                merges partial results into results/results.json
+  make_table.py             writes paper/tab_e3.tex
+  figstyle.py, fig_*.py     figure style and figure scripts
+  make_banner.py            README banner
+  paper_web.py              paper.tex -> docs/paper/index.html (pandoc)
+paper/                      paper.tex, paper.pdf, paper.bbl, references.bib, arxiv.sty,
+                            fig_architecture.tex (TikZ), tab_e3.tex, figs/, reader.html (web template)
+results/                    parts/ (cached per-unit .npz), results.json, results_extra.json
+assets/                     PNG previews of the figures
+docs/                       GitHub Pages: paper/ (web reader), assets/banner.png
+data/                       downloaded by get_data.sh (git-ignored)
+tests/                      simulation library, web reader build
 ```
-
-## Reproducing the results
-
-All commands are run from the repository root. Cached results are included, so figures, the results table and the
-paper can be rebuilt without rerunning the experiments.
-
-```bash
-pip install -r requirements.txt
-make data          # download GPPD v1.3.0 and Natural Earth boundaries into data/
-make experiments   # optional: rerun E1–E3 (about 6 minutes on our test machine)
-make figures       # regenerate paper/figs/*.pdf and assets/*.png
-make table         # regenerate paper/tab_e3.tex
-make paper         # compile paper/paper.pdf (requires a LaTeX distribution)
-```
-
-Without `make`:
-
-```bash
-bash get_data.sh
-python code/run_parts.py e1 0,1,2,3,4,5,6
-python code/run_parts.py e2 0,1
-python code/run_parts.py e3 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
-python code/combine.py
-python code/fig_global_map.py && python code/fig_thailand.py && python code/fig_results.py
-python code/make_table.py
-```
-
-Every experimental unit uses its own random-number stream derived from a fixed master seed (`code/config.py`), so
-results do not depend on the order or partitioning of computation. The code was tested with Python 3, NumPy 2.5,
-SciPy 1.18, pandas 3.0, Matplotlib 3.11, scikit-learn 1.9, Shapely 2.2, pyproj 3.8 and h3 4.5.
 
 ## Data sources
 
@@ -123,7 +141,17 @@ SciPy 1.18, pandas 3.0, Matplotlib 3.11, scikit-learn 1.9, Shapely 2.2, pyproj 3
 
 The data are not redistributed in this repository; `get_data.sh` downloads them from their public sources.
 
+## Limitations
+
+Hazard fields are stationary and Gaussian, whereas real hazards are non-stationary and heavy-tailed; location errors
+are Gaussian, whereas geocoding errors are structured by administrative boundaries; disclosure follows a stylised
+latent-awareness model. The assets come from a single sector, and the owner field over-represents jurisdictions with
+open power-sector data. The DGI compares disclosure with modelled exposure, not with vulnerability or financial
+materiality, so quadrant labels are prompts for scrutiny rather than findings. See paper §8.
+
 ## Citation
+
+See [`CITATION.cff`](CITATION.cff), or:
 
 ```bibtex
 @misc{chongmankhong2026words,
@@ -131,6 +159,9 @@ The data are not redistributed in this repository; `get_data.sh` downloads them 
   title  = {Words to Coordinates: An Uncertainty-Aware {NLP}--Geospatial Framework for Measuring
             the Gap Between Disclosed and Physical Climate Risk},
   year   = {2026},
-  note   = {Preprint}
+  note   = {Preprint},
+  url    = {https://thanatchon36.github.io/words-to-coordinates/paper/}
 }
 ```
+
+License: MIT.

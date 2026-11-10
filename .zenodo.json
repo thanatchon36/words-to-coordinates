@@ -1,0 +1,27 @@
+{
+  "title": "words-to-coordinates",
+  "upload_type": "software",
+  "description": "Code, cached results and preprint for Words to Coordinates (W2C), an uncertainty-aware NLP-geospatial framework that links what firms disclose about physical climate risk to what their assets face: taxonomy-aligned extraction (IFRS S2 with crosswalks to ESRS E1 and GRI 305) with provenance, geocoding with explicit precision classes, hazard-ensemble overlay and the Disclosure Gap Index with disclosure-exposure quadrants. The simulation study uses the real locations of 11,107 power plants (Global Power Plant Database v1.3.0) with synthetic hazards and disclosures, confirms a closed-form relation between geolocation error and exposure fidelity, and propagates extraction, geolocation and hazard-model uncertainty by Monte Carlo. Companion software to the preprint \"Words to Coordinates: An Uncertainty-Aware NLP-Geospatial Framework for Measuring the Gap Between Disclosed and Physical Climate Risk\".",
+  "creators": [
+    {
+      "name": "Chongmankhong, Thanatchon"
+    }
+  ],
+  "license": "mit",
+  "keywords": [
+    "climate risk disclosure",
+    "physical climate risk",
+    "natural language processing",
+    "geospatial analysis",
+    "uncertainty quantification",
+    "sustainable finance"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://thanatchon36.github.io/words-to-coordinates/paper/",
+      "relation": "isDocumentedBy",
+      "resource_type": "publication-preprint",
+      "scheme": "url"
+    }
+  ]
+}
