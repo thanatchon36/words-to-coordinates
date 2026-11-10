@@ -21,3 +21,6 @@ venv/
 
 # Tests
 .pytest_cache/
+
+# Hugging Face dataset build (make hf)
+build/

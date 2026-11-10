@@ -1,7 +1,7 @@
 PY ?= .venv/bin/python
 E3_REPS := 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
 
-.PHONY: setup data experiments figures banner table paper web test all clean
+.PHONY: setup data experiments figures banner table paper web hf test all clean
 
 setup:          ## create venv and install dependencies (needs uv)
 	uv venv .venv --python 3.12
@@ -32,6 +32,9 @@ paper:          ## compile paper/paper.pdf (needs a LaTeX distribution)
 
 web:            ## web reader -> docs/paper/index.html (needs pandoc), served on GitHub Pages
 	$(PY) code/paper_web.py
+
+hf:             ## Hugging Face dataset -> build/hf/ (needs data/)
+	$(PY) code/make_hf_dataset.py
 
 test:           ## unit tests (no downloaded data needed)
 	$(PY) -m pytest -q
