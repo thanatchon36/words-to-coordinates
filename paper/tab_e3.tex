@@ -1,0 +1,19 @@
+\begin{table}[t]
+\caption{Uncertainty propagation for identifying silent-risk firms (E3): means over 20 replications, standard deviations in parentheses. Brier scores and expected calibration error (ECE) evaluate $P(Q_i=\text{silent})$; AP is average precision. Precision, recall and the share of firms flagged refer to the point classification for the point estimate and to the rule $P(Q_i=\text{silent}) \geq 0.8$ for the Monte Carlo (MC) variants. Bold marks the best value in each probabilistic or precision column.}
+\label{tab:e3}
+\centering
+\fontsize{8}{10}\selectfont
+\setlength{\tabcolsep}{4.5pt}
+\begin{tabular}{@{}lcccccc@{}}
+\toprule
+& \multicolumn{3}{c}{Probabilistic quality} & \multicolumn{3}{c}{Flagging silent-risk firms} \\
+\cmidrule(lr){2-4}\cmidrule(l){5-7}
+Method & Brier $\downarrow$ & ECE $\downarrow$ & AP $\uparrow$ & Precision $\uparrow$ & Recall & Flagged \\
+\midrule
+Point estimate & 0.100 (.008) & -- & -- & 0.676 (.029) & 0.728 (.038) & 17.4\% \\
+MC: extraction only & 0.091 (.007) & 0.075 (.009) & 0.573 (.041) & 0.675 (.030) & 0.707 (.057) & 16.9\% \\
+MC: location + hazard model & 0.075 (.005) & 0.047 (.007) & 0.712 (.032) & 0.803 (.038) & 0.429 (.034) & 8.6\% \\
+MC: full propagation & \textbf{0.072} (.004) & \textbf{0.033} (.006) & \textbf{0.732} (.026) & \textbf{0.842} (.029) & 0.299 (.057) & 5.7\% \\
+\bottomrule
+\end{tabular}
+\end{table}

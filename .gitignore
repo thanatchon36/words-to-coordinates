@@ -1,0 +1,20 @@
+# LaTeX build artefacts (paper.bbl is kept for arXiv)
+paper/*.aux
+paper/*.log
+paper/*.blg
+paper/*.out
+paper/*.synctex.gz
+
+# Downloaded data: fetch with `make data` or `bash get_data.sh`
+data/*
+!data/.gitkeep
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# OS
+.DS_Store

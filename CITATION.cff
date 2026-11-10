@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "Words to Coordinates: An Uncertainty-Aware NLP-Geospatial Framework for Measuring the Gap Between Disclosed and Physical Climate Risk"
+authors:
+  - family-names: Chongmankhong
+    given-names: Thanatchon
+type: software
+keywords:
+  - climate risk disclosure
+  - physical climate risk
+  - natural language processing
+  - geospatial analysis
+  - uncertainty quantification

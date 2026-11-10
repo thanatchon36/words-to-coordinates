@@ -1,0 +1,83 @@
+\begin{tikzpicture}[
+  font=\sffamily\scriptsize,
+  >={Stealth[length=4.2pt,width=3.4pt]},
+  base/.style={draw, rounded corners=2pt, align=center, inner sep=3.2pt, line width=0.45pt},
+  neutral/.style={base, draw=black!45, fill=black!4},
+  tl/.style={base, draw=OIblue!85!black, fill=OIblue!7, text width=6.75cm, minimum height=1.02cm},
+  gl/.style={base, draw=OIgreen!85!black, fill=OIgreen!8, text width=6.75cm, minimum height=1.02cm},
+  outp/.style={base, draw=black!45, fill=white, text width=4.55cm, minimum height=1.0cm},
+  hdr/.style={align=center, font=\sffamily\scriptsize\bfseries},
+  arr/.style={->, line width=0.55pt, draw=black!70},
+]
+% ---- shared upstream stages
+\node[neutral, text width=15.25cm] (src) at (0,0)
+  {\textbf{Disclosure sources}\\[1pt]
+   SEC EDGAR \textperiodcentered{} EDINET \textperiodcentered{} DART \textperiodcentered{}
+   SET Form 56-1 One Report \textperiodcentered{} ESEF \textperiodcentered{} BRSR (XBRL)\\
+   sustainability, TCFD and ISSB reports (PDF, many languages)};
+\node[neutral, text width=15.25cm, below=4.5mm of src] (doc)
+  {\textbf{Document AI with provenance}\\[1pt]
+   layout parsing, OCR, table and chart extraction; every element keyed by
+   (document hash, page, bounding box)};
+
+% ---- text lane
+\node[hdr, text=OIblue!85!black] (th) at (-3.95,-2.62) {Text lane: what firms disclose ($\hat D$)};
+\node[tl, below=2.2mm of th] (t1)
+  {\textbf{Hybrid retrieval}\\[1pt] BM25 + multilingual dense embeddings\\ + visual page retrieval};
+\node[tl, below=4.2mm of t1] (t2)
+  {\textbf{Taxonomy-aligned extraction}\\[1pt] IFRS S2 schema with crosswalks to ESRS E1 and GRI 305;\\
+   student model trained by XBRL distant supervision};
+\node[tl, below=4.2mm of t2] (t3)
+  {\textbf{Verification and calibration}\\[1pt] unit normalisation, consistency checks,\\
+   calibrated $P(D\mid\hat D)$ and conformal prediction sets};
+
+% ---- geo lane
+\node[hdr, text=OIgreen!80!black] (gh) at (3.95,-2.62) {Geo lane: what assets face ($\hat E$)};
+\node[gl, below=2.2mm of gh] (g1)
+  {\textbf{Entity and asset resolution}\\[1pt] LEI and parent links; asset registries
+   (GEM, Climate TRACE, GPPD, OSM)};
+\node[gl, below=4.2mm of g1] (g2)
+  {\textbf{Geocoding with precision classes}\\[1pt] coordinates $\hat{\mathbf{x}}_a$ with error scale
+   $\sigma_r$, from site to country level};
+\node[gl, below=4.2mm of g2] (g3)
+  {\textbf{Hazard overlay}\\[1pt] CMIP6, Aqueduct, IBTrACS $\times$ SSP scenario $\times$ horizon;\\
+   multi-model ensemble $\{Z^{(m)}\}$};
+
+\begin{scope}[on background layer]
+  \node[draw=OIblue!70, dashed, rounded corners=3pt, line width=0.5pt, fill=OIblue!2,
+        inner sep=2.6mm, fit=(th)(t1)(t2)(t3)] (tbox) {};
+  \node[draw=OIgreen!70, dashed, rounded corners=3pt, line width=0.5pt, fill=OIgreen!2,
+        inner sep=2.6mm, fit=(gh)(g1)(g2)(g3)] (gbox) {};
+\end{scope}
+
+\draw[arr] (src) -- (doc);
+\draw[arr] (doc.south -| tbox.north) -- (tbox.north);
+\draw[arr] (doc.south -| gbox.north) -- (gbox.north);
+\draw[arr] (t1) -- (t2); \draw[arr] (t2) -- (t3);
+\draw[arr] (g1) -- (g2); \draw[arr] (g2) -- (g3);
+
+% ---- merge
+\node[neutral, text width=15.25cm, anchor=north] (mc) at ($(tbox.south)!0.5!(gbox.south)+(0,-5.5mm)$)
+  {\textbf{Monte Carlo uncertainty propagation and Disclosure Gap Index}\\[1pt]
+   joint draws of disclosure level, asset locations and hazard-model member\\
+   $\rightarrow$ distribution of $\mathrm{DGI}_i$ and quadrant probabilities $P(Q_i{=}q)$};
+\draw[arr] (tbox.south) -- (tbox.south |- mc.north);
+\draw[arr] (gbox.south) -- (gbox.south |- mc.north);
+
+% ---- outputs
+\node[outp, anchor=north] (o2) at ($(mc.south)+(0,-5.5mm)$)
+  {\textbf{Econometric analysis}\\[1pt] staggered difference-in-differences;\\ event studies of hazard shocks};
+\node[outp, anchor=north west] (o1) at ($(mc.south west)+(0,-5.5mm)$)
+  {\textbf{Provenance-linked global map}\\[1pt] H3 aggregation; scenario and horizon\\ toggles; click-through to source page};
+\node[outp, anchor=north east] (o3) at ($(mc.south east)+(0,-5.5mm)$)
+  {\textbf{Open dataset}\\[1pt] values, provenance and uncertainty;\\ no redistribution of source PDFs};
+\draw[arr] (mc.south -| o1.north) -- (o1.north);
+\draw[arr] (mc.south) -- (o2.north);
+\draw[arr] (mc.south -| o3.north) -- (o3.north);
+
+% ---- shared infrastructure
+\node[base, draw=black!30, fill=black!2, text width=15.25cm, anchor=north, inner sep=2.6pt] (infra)
+  at ($(o2.south)+(0,-3.5mm)$)
+  {\textit{Shared layer:} PostgreSQL/PostGIS with pgvector \textperiodcentered{} GeoParquet keyed by H3 cell
+   \textperiodcentered{} workflow orchestration \textperiodcentered{} human-in-the-loop annotation};
+\end{tikzpicture}

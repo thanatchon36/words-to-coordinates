@@ -1,0 +1,364 @@
+\begin{thebibliography}{57}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Angelopoulos and Bates(2023)]{angelopoulos2023gentle}
+Anastasios~N. Angelopoulos and Stephen Bates.
+\newblock Conformal prediction: A gentle introduction.
+\newblock \emph{Foundations and Trends in Machine Learning}, 16\penalty0
+  (4):\penalty0 494--591, 2023.
+
+\bibitem[Auer et~al.(2024)]{auer2024docling}
+Christoph Auer et~al.
+\newblock Docling technical report.
+\newblock \emph{arXiv preprint arXiv:2408.09869}, 2024.
+
+\bibitem[Berg et~al.(2022)Berg, K{\"o}lbel, and Rigobon]{berg2022aggregate}
+Florian Berg, Julian~F. K{\"o}lbel, and Roberto Rigobon.
+\newblock Aggregate confusion: The divergence of {ESG} ratings.
+\newblock \emph{Review of Finance}, 26\penalty0 (6):\penalty0 1315--1344, 2022.
+
+\bibitem[Bingler et~al.(2022)Bingler, Kraus, Leippold, and
+  Webersinke]{bingler2022cheap}
+Julia~Anna Bingler, Mathias Kraus, Markus Leippold, and Nicolas Webersinke.
+\newblock Cheap talk and cherry-picking: What {ClimateBert} has to say on
+  corporate climate risk disclosures.
+\newblock \emph{Finance Research Letters}, 47:\penalty0 102776, 2022.
+
+\bibitem[Brier(1950)]{brier1950}
+Glenn~W. Brier.
+\newblock Verification of forecasts expressed in terms of probability.
+\newblock \emph{Monthly Weather Review}, 78\penalty0 (1):\penalty0 1--3, 1950.
+
+\bibitem[Byers et~al.(2018)Byers, Friedrich, Hennig, Kressig, Li, McCormick,
+  and Malaguzzi~Valeri]{byers2018gppd}
+Logan Byers, Johannes Friedrich, Roman Hennig, Aaron Kressig, Xinyue Li, Colin
+  McCormick, and Laura Malaguzzi~Valeri.
+\newblock A global database of power plants.
+\newblock Technical note, World Resources Institute, 2018.
+\newblock Global Power Plant Database, version 1.3.0 (2021).
+
+\bibitem[Caldecott et~al.(2022)Caldecott, McCarten, Christiaen, and
+  Hickey]{caldecott2022spatial}
+Ben Caldecott, Matthew McCarten, Christophe Christiaen, and Conor Hickey.
+\newblock Spatial finance: Practical and theoretical contributions to financial
+  analysis.
+\newblock \emph{Journal of Sustainable Finance \& Investment}, 2022.
+
+\bibitem[Callaway and Sant'Anna(2021)]{callaway2021did}
+Brantly Callaway and Pedro H.~C. Sant'Anna.
+\newblock Difference-in-differences with multiple time periods.
+\newblock \emph{Journal of Econometrics}, 225\penalty0 (2):\penalty0 200--230,
+  2021.
+
+\bibitem[Carroll et~al.(2006)Carroll, Ruppert, Stefanski, and
+  Crainiceanu]{carroll2006measurement}
+Raymond~J. Carroll, David Ruppert, Leonard~A. Stefanski, and Ciprian~M.
+  Crainiceanu.
+\newblock \emph{Measurement Error in Nonlinear Models: A Modern Perspective}.
+\newblock Chapman \& Hall/CRC, second edition, 2006.
+
+\bibitem[Chen et~al.(2024)Chen, Xiao, Zhang, Luo, Lian, and Liu]{chen2024bgem3}
+Jianlv Chen, Shitao Xiao, Peitian Zhang, Kun Luo, Defu Lian, and Zheng Liu.
+\newblock {BGE} {M3}-embedding: Multi-lingual, multi-functionality,
+  multi-granularity text embeddings through self-knowledge distillation.
+\newblock \emph{arXiv preprint arXiv:2402.03216}, 2024.
+
+\bibitem[{Climate TRACE}(2024)]{climatetrace2024}
+{Climate TRACE}.
+\newblock {Climate TRACE} emissions inventory.
+\newblock \url{https://climatetrace.org}, 2024.
+
+\bibitem[Diggelmann et~al.(2020)Diggelmann, Boyd-Graber, Bulian, Ciaramita, and
+  Leippold]{diggelmann2020climatefever}
+Thomas Diggelmann, Jordan Boyd-Graber, Jannis Bulian, Massimiliano Ciaramita,
+  and Markus Leippold.
+\newblock {CLIMATE-FEVER}: A dataset for verification of real-world climate
+  claims.
+\newblock \emph{arXiv preprint arXiv:2012.00614}, 2020.
+
+\bibitem[{European Commission}(2023)]{ec2023esrs}
+{European Commission}.
+\newblock {Commission Delegated Regulation (EU) 2023/2772} supplementing
+  {Directive 2013/34/EU} as regards sustainability reporting standards.
+\newblock Official Journal of the European Union, 2023.
+
+\bibitem[Eyring et~al.(2016)Eyring, Bony, Meehl, Senior, Stevens, Stouffer, and
+  Taylor]{eyring2016cmip6}
+Veronika Eyring, Sandrine Bony, Gerald~A. Meehl, Catherine~A. Senior, Bjorn
+  Stevens, Ronald~J. Stouffer, and Karl~E. Taylor.
+\newblock Overview of the {Coupled Model Intercomparison Project Phase 6
+  (CMIP6)} experimental design and organization.
+\newblock \emph{Geoscientific Model Development}, 9\penalty0 (5):\penalty0
+  1937--1958, 2016.
+
+\bibitem[Faysse et~al.(2024)Faysse, Sibille, Wu, Omrani, Viaud, Hudelot, and
+  Colombo]{faysse2024colpali}
+Manuel Faysse, Hugues Sibille, Tony Wu, Bilel Omrani, Gautier Viaud, C{\'e}line
+  Hudelot, and Pierre Colombo.
+\newblock {ColPali}: Efficient document retrieval with vision language models.
+\newblock \emph{arXiv preprint arXiv:2407.01449}, 2024.
+
+\bibitem[Geifman and El-Yaniv(2017)]{geifman2017selective}
+Yonatan Geifman and Ran El-Yaniv.
+\newblock Selective classification for deep neural networks.
+\newblock In \emph{Advances in Neural Information Processing Systems},
+  volume~30, 2017.
+
+\bibitem[{Global Energy Monitor}(2024)]{gem2024}
+{Global Energy Monitor}.
+\newblock {Global Energy Monitor} trackers.
+\newblock \url{https://globalenergymonitor.org}, 2024.
+
+\bibitem[{Global Legal Entity Identifier Foundation}(2024)]{gleif2024}
+{Global Legal Entity Identifier Foundation}.
+\newblock {LEI} reference and relationship data.
+\newblock \url{https://www.gleif.org}, 2024.
+
+\bibitem[{Global Reporting Initiative}(2016)]{gri305}
+{Global Reporting Initiative}.
+\newblock {GRI} 305: Emissions 2016.
+\newblock Global Sustainability Standards Board, 2016.
+
+\bibitem[Guo et~al.(2017)Guo, Pleiss, Sun, and Weinberger]{guo2017calibration}
+Chuan Guo, Geoff Pleiss, Yu~Sun, and Kilian~Q. Weinberger.
+\newblock On calibration of modern neural networks.
+\newblock In \emph{Proceedings of the 34th International Conference on Machine
+  Learning}, pages 1321--1330, 2017.
+
+\bibitem[Hain et~al.(2022)Hain, K{\"o}lbel, and Leippold]{hain2022physical}
+Linda~Isabella Hain, Julian~F. K{\"o}lbel, and Markus Leippold.
+\newblock Let's get physical: Comparing metrics of physical climate risk.
+\newblock \emph{Finance Research Letters}, 46:\penalty0 102406, 2022.
+
+\bibitem[Hinton et~al.(2015)Hinton, Vinyals, and Dean]{hinton2015distilling}
+Geoffrey Hinton, Oriol Vinyals, and Jeff Dean.
+\newblock Distilling the knowledge in a neural network.
+\newblock \emph{arXiv preprint arXiv:1503.02531}, 2015.
+
+\bibitem[{International Sustainability Standards
+  Board}(2023{\natexlab{a}})]{ifrs2023s1}
+{International Sustainability Standards Board}.
+\newblock {IFRS S1 General Requirements for Disclosure of
+  Sustainability-related Financial Information}.
+\newblock IFRS Foundation, 2023{\natexlab{a}}.
+
+\bibitem[{International Sustainability Standards
+  Board}(2023{\natexlab{b}})]{ifrs2023s2}
+{International Sustainability Standards Board}.
+\newblock {IFRS S2 Climate-related Disclosures}.
+\newblock IFRS Foundation, 2023{\natexlab{b}}.
+
+\bibitem[Knapp et~al.(2010)Knapp, Kruk, Levinson, Diamond, and
+  Neumann]{knapp2010ibtracs}
+Kenneth~R. Knapp, Michael~C. Kruk, David~H. Levinson, Howard~J. Diamond, and
+  Charles~J. Neumann.
+\newblock The {International Best Track Archive for Climate Stewardship
+  (IBTrACS)}: Unifying tropical cyclone data.
+\newblock \emph{Bulletin of the American Meteorological Society}, 91\penalty0
+  (3):\penalty0 363--376, 2010.
+
+\bibitem[K{\"o}lbel et~al.(2024)K{\"o}lbel, Leippold, Rillaerts, and
+  Wang]{kolbel2024askbert}
+Julian~F. K{\"o}lbel, Markus Leippold, Jordy Rillaerts, and Qian Wang.
+\newblock Ask {BERT}: How regulatory disclosure of transition and physical
+  climate risks affects the {CDS} term structure.
+\newblock \emph{Journal of Financial Econometrics}, 22\penalty0 (1), 2024.
+
+\bibitem[Kotsantonis and Serafeim(2019)]{kotsantonis2019four}
+Sakis Kotsantonis and George Serafeim.
+\newblock Four things no one will tell you about {ESG} data.
+\newblock \emph{Journal of Applied Corporate Finance}, 31\penalty0
+  (2):\penalty0 50--58, 2019.
+
+\bibitem[Krippendorff(2004)]{krippendorff2004content}
+Klaus Krippendorff.
+\newblock \emph{Content Analysis: An Introduction to Its Methodology}.
+\newblock Sage, second edition, 2004.
+
+\bibitem[Krueger et~al.(2020)Krueger, Sautner, and
+  Starks]{krueger2020importance}
+Philipp Krueger, Zacharias Sautner, and Laura~T. Starks.
+\newblock The importance of climate risks for institutional investors.
+\newblock \emph{The Review of Financial Studies}, 33\penalty0 (3):\penalty0
+  1067--1111, 2020.
+
+\bibitem[Kuzma et~al.(2023)]{kuzma2023aqueduct}
+Samantha Kuzma et~al.
+\newblock {Aqueduct 4.0}: Updated decision-relevant global water risk
+  indicators.
+\newblock Technical note, World Resources Institute, 2023.
+
+\bibitem[Lacoste et~al.(2019)Lacoste, Luccioni, Schmidt, and
+  Dandres]{lacoste2019quantifying}
+Alexandre Lacoste, Alexandra Luccioni, Victor Schmidt, and Thomas Dandres.
+\newblock Quantifying the carbon emissions of machine learning.
+\newblock \emph{arXiv preprint arXiv:1910.09700}, 2019.
+
+\bibitem[Lewis et~al.(2020)]{lewis2020rag}
+Patrick Lewis et~al.
+\newblock Retrieval-augmented generation for knowledge-intensive {NLP} tasks.
+\newblock In \emph{Advances in Neural Information Processing Systems},
+  volume~33, pages 9459--9474, 2020.
+
+\bibitem[Luccioni et~al.(2020)Luccioni, Baylor, and
+  Duchene]{luccioni2020analyzing}
+Alexandra Luccioni, Emily Baylor, and Nicolas Duchene.
+\newblock Analyzing sustainability reports using natural language processing.
+\newblock \emph{arXiv preprint arXiv:2011.08073}, 2020.
+
+\bibitem[MacKinlay(1997)]{mackinlay1997event}
+A.~Craig MacKinlay.
+\newblock Event studies in economics and finance.
+\newblock \emph{Journal of Economic Literature}, 35\penalty0 (1):\penalty0
+  13--39, 1997.
+
+\bibitem[Mintz et~al.(2009)Mintz, Bills, Snow, and Jurafsky]{mintz2009distant}
+Mike Mintz, Steven Bills, Rion Snow, and Daniel Jurafsky.
+\newblock Distant supervision for relation extraction without labeled data.
+\newblock In \emph{Proceedings of the Joint Conference of the 47th Annual
+  Meeting of the {ACL} and the 4th International Joint Conference on Natural
+  Language Processing of the {AFNLP}}, pages 1003--1011, 2009.
+
+\bibitem[{Natural Earth}(2024)]{naturalearth2024}
+{Natural Earth}.
+\newblock {Natural Earth}: Free vector and raster map data.
+\newblock \url{https://www.naturalearthdata.com}, 2024.
+
+\bibitem[{Network for Greening the Financial System}(2023)]{ngfs2023}
+{Network for Greening the Financial System}.
+\newblock {NGFS} climate scenarios for central banks and supervisors.
+\newblock NGFS, 2023.
+
+\bibitem[Ni et~al.(2023)]{ni2023chatreport}
+Jingwei Ni et~al.
+\newblock {CHATREPORT}: Democratizing sustainability disclosure analysis
+  through {LLM}-based tools.
+\newblock In \emph{Proceedings of the 2023 Conference on Empirical Methods in
+  Natural Language Processing: System Demonstrations}, 2023.
+
+\bibitem[O'Neill et~al.(2016)]{oneill2016scenariomip}
+Brian~C. O'Neill et~al.
+\newblock The {Scenario Model Intercomparison Project (ScenarioMIP)} for
+  {CMIP6}.
+\newblock \emph{Geoscientific Model Development}, 9:\penalty0 3461--3482, 2016.
+
+\bibitem[Rahimi and Recht(2007)]{rahimi2007random}
+Ali Rahimi and Benjamin Recht.
+\newblock Random features for large-scale kernel machines.
+\newblock In \emph{Advances in Neural Information Processing Systems},
+  volume~20, 2007.
+
+\bibitem[Rasmussen and Williams(2006)]{rasmussen2006gp}
+Carl~Edward Rasmussen and Christopher K.~I. Williams.
+\newblock \emph{Gaussian Processes for Machine Learning}.
+\newblock MIT Press, 2006.
+
+\bibitem[Robertson and Zaragoza(2009)]{robertson2009bm25}
+Stephen Robertson and Hugo Zaragoza.
+\newblock The probabilistic relevance framework: {BM25} and beyond.
+\newblock \emph{Foundations and Trends in Information Retrieval}, 3\penalty0
+  (4):\penalty0 333--389, 2009.
+
+\bibitem[Sautner et~al.(2023)Sautner, van Lent, Vilkov, and
+  Zhang]{sautner2023firm}
+Zacharias Sautner, Laurence van Lent, Grigory Vilkov, and Ruishen Zhang.
+\newblock Firm-level climate change exposure.
+\newblock \emph{The Journal of Finance}, 78\penalty0 (3):\penalty0 1449--1498,
+  2023.
+
+\bibitem[{\v{S}}avri{\v{c}} et~al.(2019){\v{S}}avri{\v{c}}, Patterson, and
+  Jenny]{savric2019equal}
+Bojan {\v{S}}avri{\v{c}}, Tom Patterson, and Bernhard Jenny.
+\newblock The {Equal Earth} map projection.
+\newblock \emph{International Journal of Geographical Information Science},
+  33\penalty0 (3):\penalty0 454--465, 2019.
+
+\bibitem[Schimanski et~al.(2024{\natexlab{a}})Schimanski, Reding, Reding,
+  Bingler, Kraus, and Leippold]{schimanski2024bridging}
+Tobias Schimanski, Andrin Reding, Nico Reding, Julia Bingler, Mathias Kraus,
+  and Markus Leippold.
+\newblock Bridging the gap in {ESG} measurement: Using {NLP} to quantify
+  environmental, social, and governance communication.
+\newblock \emph{Finance Research Letters}, 61:\penalty0 104979,
+  2024{\natexlab{a}}.
+
+\bibitem[Schimanski et~al.(2024{\natexlab{b}})]{schimanski2024climretrieve}
+Tobias Schimanski et~al.
+\newblock {ClimRetrieve}: A benchmarking dataset for information retrieval from
+  corporate climate disclosures.
+\newblock In \emph{Proceedings of the 2024 Conference on Empirical Methods in
+  Natural Language Processing}, 2024{\natexlab{b}}.
+
+\bibitem[Stammbach et~al.(2023)Stammbach, Webersinke, Bingler, Kraus, and
+  Leippold]{stammbach2023environmental}
+Dominik Stammbach, Nicolas Webersinke, Julia~Anna Bingler, Mathias Kraus, and
+  Markus Leippold.
+\newblock Environmental claim detection.
+\newblock In \emph{Proceedings of the 61st Annual Meeting of the Association
+  for Computational Linguistics (Volume 2: Short Papers)}, 2023.
+
+\bibitem[Strubell et~al.(2019)Strubell, Ganesh, and
+  McCallum]{strubell2019energy}
+Emma Strubell, Ananya Ganesh, and Andrew McCallum.
+\newblock Energy and policy considerations for deep learning in {NLP}.
+\newblock In \emph{Proceedings of the 57th Annual Meeting of the Association
+  for Computational Linguistics}, pages 3645--3650, 2019.
+
+\bibitem[{Task Force on Climate-related Financial Disclosures}(2017)]{tcfd2017}
+{Task Force on Climate-related Financial Disclosures}.
+\newblock Final report: Recommendations of the {Task Force on Climate-related
+  Financial Disclosures}.
+\newblock Financial Stability Board, 2017.
+
+\bibitem[{Taskforce on Nature-related Financial Disclosures}(2023)]{tnfd2023}
+{Taskforce on Nature-related Financial Disclosures}.
+\newblock Recommendations of the {Taskforce on Nature-related Financial
+  Disclosures}.
+\newblock TNFD, 2023.
+
+\bibitem[Thrasher et~al.(2022)Thrasher, Wang, Michaelis, Melton, Lee, and
+  Nemani]{thrasher2022nex}
+Bridget Thrasher, Weile Wang, Andrew Michaelis, Forrest Melton, Tsengdar Lee,
+  and Ramakrishna Nemani.
+\newblock {NASA} global daily downscaled projections, {CMIP6}.
+\newblock \emph{Scientific Data}, 9:\penalty0 262, 2022.
+
+\bibitem[{Uber Technologies}(2018)]{h3}
+{Uber Technologies}.
+\newblock {H3}: A hexagonal hierarchical geospatial indexing system.
+\newblock \url{https://h3geo.org}, 2018.
+
+\bibitem[Varini et~al.(2020)Varini, Boyd-Graber, Ciaramita, and
+  Leippold]{varini2020climatext}
+Francesco~S. Varini, Jordan Boyd-Graber, Massimiliano Ciaramita, and Markus
+  Leippold.
+\newblock {ClimaText}: A dataset for climate change topic detection.
+\newblock \emph{arXiv preprint arXiv:2012.00483}, 2020.
+
+\bibitem[Vovk et~al.(2005)Vovk, Gammerman, and Shafer]{vovk2005algorithmic}
+Vladimir Vovk, Alex Gammerman, and Glenn Shafer.
+\newblock \emph{Algorithmic Learning in a Random World}.
+\newblock Springer, 2005.
+
+\bibitem[Ward et~al.(2020)]{ward2020aqueduct}
+Philip~J. Ward et~al.
+\newblock {Aqueduct Floods} methodology.
+\newblock Technical note, World Resources Institute, 2020.
+
+\bibitem[Webersinke et~al.(2021)Webersinke, Kraus, Bingler, and
+  Leippold]{webersinke2021climatebert}
+Nicolas Webersinke, Mathias Kraus, Julia~Anna Bingler, and Markus Leippold.
+\newblock {ClimateBert}: A pretrained language model for climate-related text.
+\newblock \emph{arXiv preprint arXiv:2110.12010}, 2021.
+
+\bibitem[Wilkinson et~al.(2016)]{wilkinson2016fair}
+Mark~D. Wilkinson et~al.
+\newblock The {FAIR} guiding principles for scientific data management and
+  stewardship.
+\newblock \emph{Scientific Data}, 3:\penalty0 160018, 2016.
+
+\end{thebibliography}
