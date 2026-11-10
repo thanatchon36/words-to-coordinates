@@ -1,7 +1,7 @@
 PY ?= .venv/bin/python
 E3_REPS := 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
 
-.PHONY: setup data experiments figures banner table paper web hf test all clean
+.PHONY: setup data experiments figures banner poster table paper web hf test all clean
 
 setup:          ## create venv and install dependencies (needs uv)
 	uv venv .venv --python 3.12
@@ -23,6 +23,9 @@ figures:        ## paper/figs/*.pdf and assets/*.png (needs data/)
 
 banner:         ## README banner -> docs/assets/banner.png (needs data/)
 	$(PY) code/make_banner.py
+
+poster:         ## LinkedIn poster -> docs/assets/linkedin_poster.png (needs data/; FONT_DIR=<Fira Sans .ttf dir> optional)
+	$(PY) code/make_poster.py
 
 table:          ## paper/tab_e3.tex from results/results.json
 	$(PY) code/make_table.py

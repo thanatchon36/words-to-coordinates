@@ -10,6 +10,7 @@ All notable changes to this project are documented here. The format follows
 - Zenodo archive, concept DOI [10.5281/zenodo.24102121](https://doi.org/10.5281/zenodo.24102121) (v0.1.0: 10.5281/zenodo.24102122), with DOI badge and
   `doi` in `CITATION.cff`, the README citation and the web reader.
 - Links to the Hugging Face dataset in the README and the web reader.
+- LinkedIn poster `docs/assets/linkedin_poster.png` (`make poster`), every number read from `results/results.json`.
 
 ## [0.1.0] - 2026-11-10
 
