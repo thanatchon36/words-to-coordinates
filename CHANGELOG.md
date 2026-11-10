@@ -19,5 +19,8 @@ All notable changes to this project are documented here. The format follows
 - Experiments E1–E3 (`code/run_parts.py`, resumable and seeded per unit) on the real locations of 11,107 power plants
   held by 1,247 owners (Global Power Plant Database v1.3.0), with cached per-unit results in `results/parts/`.
 - Figure and table scripts, and a README banner from the same asset geography (`make banner`).
+- Hugging Face dataset [`thanatchon36/words-to-coordinates`](https://huggingface.co/datasets/thanatchon36/words-to-coordinates)
+  built by `make hf`: the asset table (owner names dropped), per-replicate results of E1–E3 and per-firm Monte Carlo
+  probabilities of E3.
 - Unit tests for the simulation library and the web reader's LaTeX preprocessing (`make test`), run in CI.
 - `pyproject.toml` and `make setup` (uv, Python 3.12), MIT licence, `CITATION.cff` and `.zenodo.json`.
